@@ -62,13 +62,13 @@ class PhoneFormatter
                     $format = AlpixelPhoneNumberFormat::INTERNATIONAL;
                 }
             } else {
-                $constant = '\libphonenumber\PhoneNumberFormat::'.$format;
+                $constant = 'AlpixelPhoneNumberFormat::'.$format;
                 if (false === defined($constant)) {
                     throw new InvalidArgumentException(
-                        'The format must be either a constant value or name in libphonenumber\PhoneNumberFormat'
+                        'The format must be either a constant value or name in AlpixelPhoneNumberFormat'
                     );
                 }
-                $format = constant('\libphonenumber\PhoneNumberFormat::'.$format);
+                $format = constant('AlpixelPhoneNumberFormat::'.$format);
             }
         }
 
