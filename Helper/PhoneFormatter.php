@@ -5,9 +5,8 @@ namespace Alpixel\Bundle\PhoneFormatterBundle\Helper;
 
 use Doctrine\Common\Proxy\Exception\InvalidArgumentException;
 use libphonenumber\NumberParseException;
-use libphonenumber\PhoneNumberFormat;
 use libphonenumber\PhoneNumberUtil;
-
+use Alpixel\Bundle\PhoneFormatterBundle\Formatter\AlpixelPhoneNumberFormat;
 
 /**
  * @author Benjamin HUBERT <benjamin@alpixel.fr>
@@ -35,7 +34,7 @@ class PhoneFormatter
      * @param string $locale
      * @return string
      */
-    public function format($number, $format = PhoneNumberFormat::INTERNATIONAL, $locale = null)
+    public function format($number, $format = AlpixelPhoneNumberFormat::INTERNATIONAL, $locale = null)
     {
         $phoneUtil = PhoneNumberUtil::getInstance();
 
@@ -58,9 +57,9 @@ class PhoneFormatter
         if (true === is_string($format)) {
             if ($format === "AUTO") {
                 if (strtoupper($this->defaultLocale) == strtoupper($locale)) {
-                    $format = PhoneNumberFormat::NATIONAL;
+                    $format = AlpixelPhoneNumberFormat::NATIONAL;
                 } else {
-                    $format = PhoneNumberFormat::INTERNATIONAL;
+                    $format = AlpixelPhoneNumberFormat::INTERNATIONAL;
                 }
             } else {
                 $constant = '\libphonenumber\PhoneNumberFormat::'.$format;
