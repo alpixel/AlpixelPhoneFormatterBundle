@@ -1,0 +1,13 @@
+services:
+
+    alpixel.helper.phone_formatter:
+        class: Alpixel\Bundle\PhoneFormatterBundle\Helper\PhoneFormatter
+        arguments:
+          - "%kernel.default_locale%"
+
+    alpixel.twig.phone_formatter_extension:
+        class: Alpixel\Bundle\PhoneFormatterBundle\Twig\Extension\PhoneFormatterExtension
+        arguments:
+            - "@alpixel.helper.phone_formatter"
+        tags:
+            - { name: twig.extension }

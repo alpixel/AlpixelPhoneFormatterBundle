@@ -1,0 +1,34 @@
+{
+  "name": "alpixel/phoneformatterbundle",
+  "description": "Provides helper to format phone number easily",
+  "type": "symfony-bundle",
+  "keywords": [
+    "alpixel",
+    "symfony2",
+    "symfony",
+    "bundle",
+    "phone number",
+    "formatting",
+    "twig extension"
+  ],
+  "homepage": "https://www.alpixel.fr",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "ALPIXEL",
+      "email": "contact@alpixel.fr"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "symfony/symfony": "~2.8|~3.0",
+    "giggsey/libphonenumber-for-php": "^7.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Alpixel\\Bundle\\PhoneFormatterBundle\\": ""
+    }
+  }
+}
+
+
